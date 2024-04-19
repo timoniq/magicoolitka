@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title></title>
+    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
+    <meta name="viewport" content="width=1280, initial-scale=1">
+</head>
+<script src="{{ url_for('static', path='/boba.js') }}"></script>
+<body>
+    <div id="snailhouse" style="position: relative">
+        <svg width="460" height="100" style="position: absolute; top: 0; left: 0">
+            <path id="follow" d="M 0,80 C 100,120 300,0, 400,80 L 450,0"/>
+            <path id="squiggle" d="M0,0"/>
+        </svg>
+        <h1 class="">🐌 <a href="/">m.oo.</a> • <a href="https://arsenykriuchkov.bandcamp.com" id="musicthing"></a></h1>
+    </div>
+    <div id="content">
+        <p>
+            Little magic snail... on the leaf. He has his spell.<br>
+            Child be looking curiously, lets him snail.
+        </p>
+        <div id="posts">
+            <div class="post">
+                <p>
+                    <iframe width="400" height="315" src="https://www.youtube.com/embed/0LQk11mIHbQ?si=tpMOARqAjOiVyVxl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </p>
+            </div>
+            <div class="post">
+                <p>
+                </p>
+            </div>
+        </div>
+        <hr>
+        <p>For any questions plis contact : <a href="mailto:arseny.kriuchkov@gmail.com">arseny.kriuchkov@gmail.com</a> *mail*</p>
+    </div>
+</body>
+<script>
+    makeSquiggle("squiggle", "follow", get_random(Array(25, 14, 30)), get_random(Array(19, 20, 21)));
+    document.getElementById("musicthing").innerText = get_random(Array("𝄐", "𝄫", "𝄆"));
+
+    var siteWidth = 500;
+    var scale = screen.width /siteWidth;
+
+    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
+</script>
+</html>

@@ -1,0 +1,96 @@
+body {
+    /*padding: 10px;*/
+    font-family: monospace;
+}
+
+@font-face {
+    font-family: snell; 
+    src: url('/static/snell.otf');
+}
+
+.snell {
+    font-family: snell;
+}
+
+#wave-container {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+
+#wave {
+    display: block;
+    position: relative;
+    height: 40px;
+    background: black;
+}
+
+#wave:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    right: -25%;
+    top: 20px
+}
+
+#wave:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    left: -25%;
+    top: -240px;
+}
+
+hr {
+    border: none;
+    align-content: center;
+    margin-top: -20px;
+}
+hr:after{
+    content: '∿∿∿∿∿∿∿∿';
+    /* Ratio -> font-size/letter-spacing = 6.25 */
+    letter-spacing: -8px;
+    font-size: 50px;
+}
+
+#follow {
+    fill: none;
+    stroke: none;
+    stroke-width: 2;
+  }
+  
+#squiggle {
+    fill: none;
+    stroke: black;
+    stroke-width: 2;
+}
+
+#snailhouse {
+    height: 100px;
+}
+
+#snailhouse h1 {
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+#snailhouse svg {
+    pointer-events: none;
+}
+
+#content {
+    padding-left: 20px;
+    padding-right: 50px;
+}
+
+p {
+    font-size: 1.5em;
+}
