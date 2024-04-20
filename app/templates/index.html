@@ -6,32 +6,72 @@
 </head>
 <script src="{{ url_for('static', path='/boba.js') }}"></script>
 <body>
-    <div id="snailhouse" style="position: relative">
+    <div id="snailhouse" style="position: relative; width: 460px; height: 100px;">
         <svg width="460" height="100" style="position: absolute; top: 0; left: 0">
             <path id="follow" d="M 0,80 C 100,120 300,0, 400,80 L 450,0"/>
             <path id="squiggle" d="M0,0"/>
         </svg>
         <h1 class="">🐌 <a href="/">m.oo.</a> • <a href="https://arsenykriuchkov.bandcamp.com" id="musicthing"></a></h1>
+        <div style="position: absolute; right: 60px; top: 0;">
+            <h1 style="margin: 0"><a href="/library">随</a></h1>
+        </div>
     </div>
     <div id="content">
         <p>
-            Little magic snail... on the leaf. He has his spell.<br>
-            Child be looking curiously, lets him snail.
+            Little magic snail on the leaf
         </p>
+        <hr>
+        <div id="composition">
+
+            <p>
+                <iframe width="400" height="315" src="https://www.youtube.com/embed/0LQk11mIHbQ?si=tpMOARqAjOiVyVxl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </p>
+
+            <p>
+                <iframe width="400" height="315" src="https://www.youtube.com/embed/u6Dm1oEEHSU?si=peGxQZVfsWxwAdgJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </p>
+
+            <p>
+                <a href="https://arsenykriuchkov.bandcamp.com/album/--4">
+                    <img src="https://f4.bcbits.com/img/a3241439842_10.jpg" width="400" height="400">
+                </a>
+            </p>
+
+            <p>
+                <a href="https://arsenykriuchkov.bandcamp.com/album/academia">
+                    <img src="https://f4.bcbits.com/img/a1488228705_10.jpg" width="400" height="400">
+                </a>
+            </p>
+
+        </div>
+        <hr>
         <div id="posts">
-            <div class="post">
+            <div class="post" style="position: relative">
                 <p>
-                    <iframe width="400" height="315" src="https://www.youtube.com/embed/0LQk11mIHbQ?si=tpMOARqAjOiVyVxl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="https://arsenykriuchkov.bandcamp.com/album/moonlight">
+                                    <img src="https://f4.bcbits.com/img/a0655410116_10.jpg" width="200" style="display: inline; text-align: right;">
+                                </a>
+                            </td>
+                            <td>
+                                <h1>moonlight</h1>
+                                <p>
+                                    <a href="https://arsenykriuchkov.bandcamp.com/album/moonlight">月光</a><br><br>
+                                    В полнолуние я летал над городом невидимый, полулежа в ванной, той в которой я закончил свою жизнь. Спящий город, застывший во времени, немного осыпанный ноябрьским снегом был точно готов скоро проснуться и небо переливалось из безумно черного в сумеречный оттенок синего. Я мог сжиматься до бесконечно маленьких размеров и забираться под подошвы персон, которые уже шли в свои офисы рано утром в наглаженных пиджаках. В парке вода в пруду была замерзающе-холодной, несмотря на это, я тихо искупался лежа на спине в ней, окруженный спящими лилиями и маленькими, недавно сформировавшимися ледяными кусочками… Позже я поднялся к собору с золотым куполом и вылетел голый из теплой ванны, уже согревшись: так что от моего тела исходил пар, и прикоснулся к золотому кресту.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
                 </p>
-            </div>
-            <div class="post">
-                <p>
-                </p>
+                
             </div>
         </div>
         <hr>
-        <p>For any questions plis contact : <a href="mailto:arseny.kriuchkov@gmail.com">arseny.kriuchkov@gmail.com</a> *mail*</p>
+        <p><a href="mailto:arseny.kriuchkov@gmail.com">arseny.kriuchkov@gmail.com</a> *mail for any questions*</p>
     </div>
+    <footer style="height: 100px;"></footer>
 </body>
 <script>
     makeSquiggle("squiggle", "follow", get_random(Array(25, 14, 30)), get_random(Array(19, 20, 21)));

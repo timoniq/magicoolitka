@@ -94,3 +94,18 @@ hr:after{
 p {
     font-size: 1.5em;
 }
+
+#composition p {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+#composition p iframe {
+    margin: 0;
+    padding: 0;
+}
+
+table tr td {
+    padding-right: 20px;
+}

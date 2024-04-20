@@ -1,4 +1,4 @@
-from app.routes import index
+from app.routes import index, library
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from uvicorn import run
@@ -8,6 +8,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 routes = [
     index.router,
+    library.router,
 ]
 
 for route in routes:

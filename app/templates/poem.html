@@ -1,0 +1,26 @@
+<html>
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=500, initial-scale=1">
+    <style>
+        p {
+            font-family: monospace;
+        }
+        body {
+            width: 500px;
+            padding: 20px;
+        }
+    </style>
+    <body>
+        <p>
+            {% for line in content.splitlines() %}
+                {{line}}<br>
+            {% endfor %}
+        </p>
+    </body>
+    <script>
+        var siteWidth = 500;
+        var scale = screen.width /siteWidth;
+
+        document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
+    </script>
+</html>
