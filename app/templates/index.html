@@ -18,17 +18,16 @@
     </div>
     <div id="content">
         <p>
-            Little magic snail on the leaf
+            A magic snail on the leaf
         </p>
         <hr>
         <div id="composition">
 
-            <p>
-                <iframe width="400" height="315" src="https://www.youtube.com/embed/0LQk11mIHbQ?si=tpMOARqAjOiVyVxl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p id="left-video">
             </p>
 
-            <p>
-                <iframe width="400" height="315" src="https://www.youtube.com/embed/u6Dm1oEEHSU?si=peGxQZVfsWxwAdgJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p id="right-video">
+                <iframe width="400" height="315" id="right-video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </p>
 
             <p>
@@ -69,13 +68,27 @@
             </div>
         </div>
         <hr>
-        <p><a href="mailto:arseny.kriuchkov@gmail.com">arseny.kriuchkov@gmail.com</a> *mail for any questions*</p>
+        <p><a href="mailto:arseny.kriuchkov@gmail.com">arseny.kriuchkov@gmail.com</a></p>
     </div>
     <footer style="height: 100px;"></footer>
 </body>
 <script>
     makeSquiggle("squiggle", "follow", get_random(Array(25, 14, 30)), get_random(Array(19, 20, 21)));
+
     document.getElementById("musicthing").innerText = get_random(Array("𝄐", "𝄫", "𝄆"));
+
+    function add_embed(id, link) {
+        document.getElementById(id).innerHTML = '<iframe width="400" height="315" src="' + link +'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+    }
+    
+    add_embed("left-video", "https://www.youtube.com/embed/" + get_random(Array(
+        "0LQk11mIHbQ", 
+        "Sog8kgAD6_s",
+        "AFIYSFNcnXs",
+        "Nq6C-RwkXL8",
+    )))
+
+    add_embed("right-video", "https://www.youtube.com/embed/" + "u6Dm1oEEHSU")
 
     var siteWidth = 500;
     var scale = screen.width /siteWidth;

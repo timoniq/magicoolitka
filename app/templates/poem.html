@@ -13,7 +13,7 @@
     <body>
         <p>
             {% for line in content.splitlines() %}
-                {{line}}<br>
+                {{line|safe}}<br>
             {% endfor %}
         </p>
     </body>
