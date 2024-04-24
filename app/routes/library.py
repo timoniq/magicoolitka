@@ -25,11 +25,14 @@ def process_content(content: str) -> str:
 
 
 @router.get("/{poem}", response_class=HTMLResponse)
-async def library_poem(request: Request, poem: str):
+async def library_poem(request: Request, poem: str, control_buttons: bool = False):
     if not os.path.exists("poems" + os.sep + poem + ".txt"):
         return HTMLResponse(status_code=404)
     
     title, content = get_poem(poem)
+
+    if control_buttons:
+        content += "\n\n<div id='control'><a href='/library'>🔄རྗེས་འཇུག་</a> | <a href='/'>🔙</a> | <a href='/library/" + poem + "'>*️⃣Link</a></control>"
 
     return templates.TemplateResponse(
         request=request, 
@@ -39,4 +42,4 @@ async def library_poem(request: Request, poem: str):
 
 @router.get("/", response_class=HTMLResponse)
 async def library_random_poem(request: Request):
-    return await library_poem(request, random_poem())
+    return await library_poem(request, random_poem(), control_buttons=True)
