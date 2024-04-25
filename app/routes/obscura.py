@@ -17,5 +17,5 @@ async def obscura_handler(request: Request):
     return templates.TemplateResponse(
         request=request, 
         name="generator.html", 
-        context={"title": "Obscura", "img": img, "control": control_buttons_html("/obscura/", img)},
+        context={"title": "Obscura", "img": img, "control": control_buttons_html("/obscura/", img), "style": "body {background: black}"},
     )
