@@ -1,0 +1,38 @@
+<html>
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=500, initial-scale=1">
+    <style>
+        p, #control {
+            font-family: monospace;
+        }
+        body {
+            width: 500px;
+            padding: 20px;
+        }
+        #control {
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+    <body>
+        {% if content %}
+        <p>
+            {% for line in content.splitlines() %}
+                {{line|safe}}<br>
+            {% endfor %}
+        </p>
+        {% endif %}
+        {% if img %}
+        <img src="{{img}}" width="100%">
+        {% endif %}
+        <p>
+            {{control|safe}}
+        </p>
+    </body>
+    <script>
+        var siteWidth = 500;
+        var scale = screen.width /siteWidth;
+
+        document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
+    </script>
+</html>

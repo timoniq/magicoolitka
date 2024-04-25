@@ -3,6 +3,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 import os
 import random
+from app.utility import control_buttons_html
 
 router = APIRouter(prefix="/library")
 templates = Jinja2Templates(directory="app/templates")
@@ -30,14 +31,15 @@ async def library_poem(request: Request, poem: str, control_buttons: bool = Fals
         return HTMLResponse(status_code=404)
     
     title, content = get_poem(poem)
+    ctx = {"title": title, "content": content}
 
     if control_buttons:
-        content += "\n\n<div id='control'><a href='/library'>🔄རྗེས་འཇུག་</a> | <a href='/'>🔙</a> | <a href='/library/" + poem + "'>*️⃣Link</a></control>"
+        ctx["control"] = control_buttons_html("/library/", "/library/" + poem)
 
     return templates.TemplateResponse(
         request=request, 
-        name="poem.html", 
-        context={"title": title, "content": content}
+        name="generator.html", 
+        context=ctx,
     )
 
 @router.get("/", response_class=HTMLResponse)
